@@ -5,6 +5,10 @@ pandas是常用库
 
 处理内容常用思路：
 先构造布尔掩码（True/False 标记），然后利用布尔索引对 DataFrame 进行筛选。布尔掩码在筛选过程中起到了非常重要的作用
+其中类似于：mask = df["Age"] > 30的句子，作用是依据判断条件对mask的各行元素进行打TAG
+
+result = df[mask]
+print(result)
 
 # Print the minimum and maximum unemployment rates during 2021
 min_row = unemployment.loc[unemployment["unemployment_rate"].idxmin()]
