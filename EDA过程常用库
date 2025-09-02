@@ -1,0 +1,24 @@
+seaborn
+pandas是常用库
+
+然后dataframe用于读取文件，
+
+处理内容常用思路：
+先构造布尔掩码（True/False 标记），然后利用布尔索引对 DataFrame 进行筛选。布尔掩码在筛选过程中起到了非常重要的作用
+
+# Print the minimum and maximum unemployment rates during 2021
+min_row = unemployment.loc[unemployment["unemployment_rate"].idxmin()]
+max_row = unemployment.loc[unemployment["unemployment_rate"].idxmax()]
+
+print(min_row, max_row)
+#这里是在打印数值
+----------------------------------------------------------------------
+
+# Print the minimum and maximum unemployment rates during 2021
+print(unemployment["2021"].min(), unemployment["2021"].max())
+
+# Create a boxplot of 2021 unemployment rates, broken down by continent
+sns.boxplot(data=unemployment, x="2021", y="continent")
+plt.show()
+
+
